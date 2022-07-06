@@ -1,4 +1,4 @@
 *.o
 *.d
 *.swp
-test
+test*
