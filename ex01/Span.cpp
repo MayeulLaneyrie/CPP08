@@ -6,7 +6,7 @@
 /*   By: mlaneyri <mlaneyri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:16:34 by mlaneyri          #+#    #+#             */
-/*   Updated: 2022/07/06 14:32:50 by mlaneyri         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:05:13 by mlaneyri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ unsigned int	Span::shortestSpan( void ) const
 	return ret;
 }
 
-#include <iostream>
-
 unsigned int	Span::longestSpan( void ) const
 {
 	if (this->_data.size() < 2)
@@ -99,4 +97,3 @@ unsigned int	Span::longestSpan( void ) const
 	return (*std::max_element(this->_data.begin(), this->_data.end())
 			- *std::min_element(this->_data.begin(), this->_data.end()));
 }
-

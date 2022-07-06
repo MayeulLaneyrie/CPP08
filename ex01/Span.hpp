@@ -6,7 +6,7 @@
 /*   By: mlaneyri <mlaneyri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:29:55 by mlaneyri          #+#    #+#             */
-/*   Updated: 2022/07/06 14:28:01 by mlaneyri         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:55:54 by mlaneyri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,19 @@ class Span
 		unsigned int	longestSpan( void ) const;
 
 		void	addNumber(int const n);
+
+		template<typename T>
+		void	addRange(T begin, T end);
 };
+
+template<typename T>
+void	Span::addRange(T begin, T end)
+{
+	std::vector<int>	tmp(begin, end);
+	if (tmp.size() +  this->_data.size() > this->_size)
+		throw SpanOverflowException();
+	this->_data.insert(this->_data.end(), tmp.begin(), tmp.end());
+}
 
 #endif
 
