@@ -6,7 +6,7 @@
 /*   By: mlaneyri <mlaneyri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:16:34 by mlaneyri          #+#    #+#             */
-/*   Updated: 2022/07/06 15:56:07 by mlaneyri         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:02:26 by mlaneyri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int main( void )
 		}
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
+
 	}
 	{
 		std::cout << std::endl << "==== Tests perso:" << std::endl << std::endl;
@@ -78,5 +79,18 @@ int main( void )
 		std::cout << sp.longestSpan() << std::endl;
 
 	}
+	{
+		Span sp1(3);
+
+		sp1.addNumber(42);
+		sp1.addNumber(69);
+
+		Span sp2(sp1);
+		sp2.addNumber(177013);
+
+		std::cout << std::endl;
+		std::cout << sp1.longestSpan() << " " << sp2.longestSpan() << std::endl;
+	}
+
 	return (0);
 }
